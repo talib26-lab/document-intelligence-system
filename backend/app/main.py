@@ -6,6 +6,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from backend.app.db.database import init_db
+from backend.app.api.documents import router as documents_router
 
 
 @asynccontextmanager
@@ -33,3 +34,5 @@ app.add_middleware(
 @app.get("/health", tags=["system"])
 def health() -> dict:
     return {"status": "ok"}
+
+app.include_router(documents_router)
