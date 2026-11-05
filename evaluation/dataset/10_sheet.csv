@@ -1,0 +1,16 @@
+Invoice No,INV-1010
+Date,2026-04-08
+Due Date,2026-04-22
+Supplier,Northwind Supplies
+Bill To,Greenfield Traders
+Currency,EUR
+
+Description,Qty,Unit Price,Amount
+A4 Paper Ream,8,620.00,4960.00
+Filing Cabinet,10,6400.00,64000.00
+Office Chair,9,2500.00,22500.00
+Stapler Set,2,320.00,640.00
+Monitor Stand,10,980.00,9800.00
+Subtotal,,,101900.00
+Tax,,,5095.00
+Total,,,106995.00

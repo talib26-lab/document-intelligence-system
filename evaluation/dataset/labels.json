@@ -1,0 +1,918 @@
+[
+  {
+    "file": "01_pdf_basic.pdf",
+    "kind": "pdf",
+    "expected": {
+      "invoice_number": "INV-1001",
+      "invoice_date": "2026-10-18",
+      "due_date": "2026-12-02",
+      "supplier_name": "Sunrise Trading Ltd",
+      "customer_name": "Bright Future School",
+      "currency": "BDT",
+      "subtotal": 54650.0,
+      "tax": 2732.5,
+      "total": 57382.5,
+      "line_items": [
+        {
+          "description": "Stapler Set",
+          "quantity": 10.0,
+          "unit_price": 320.0,
+          "amount": 3200.0
+        },
+        {
+          "description": "Network Cable 10m",
+          "quantity": 10.0,
+          "unit_price": 260.0,
+          "amount": 2600.0
+        },
+        {
+          "description": "Desk Lamp",
+          "quantity": 9.0,
+          "unit_price": 450.0,
+          "amount": 4050.0
+        },
+        {
+          "description": "Filing Cabinet",
+          "quantity": 7.0,
+          "unit_price": 6400.0,
+          "amount": 44800.0
+        }
+      ]
+    },
+    "expected_issue_codes": [],
+    "expect_failure": false,
+    "notes": "digital PDF, ISO date"
+  },
+  {
+    "file": "02_pdf_long_date.pdf",
+    "kind": "pdf",
+    "expected": {
+      "invoice_number": "2026/0042",
+      "invoice_date": "2026-06-07",
+      "due_date": "2026-07-07",
+      "supplier_name": "Greenleaf Foods",
+      "customer_name": "Riverside Hotel",
+      "currency": "GBP",
+      "subtotal": 36530.0,
+      "tax": 3653.0,
+      "total": 40183.0,
+      "line_items": [
+        {
+          "description": "Printer Toner",
+          "quantity": 2.0,
+          "unit_price": 3800.0,
+          "amount": 7600.0
+        },
+        {
+          "description": "Office Chair",
+          "quantity": 8.0,
+          "unit_price": 2500.0,
+          "amount": 20000.0
+        },
+        {
+          "description": "Desk Lamp",
+          "quantity": 1.0,
+          "unit_price": 450.0,
+          "amount": 450.0
+        },
+        {
+          "description": "Stapler Set",
+          "quantity": 11.0,
+          "unit_price": 320.0,
+          "amount": 3520.0
+        },
+        {
+          "description": "A4 Paper Ream",
+          "quantity": 8.0,
+          "unit_price": 620.0,
+          "amount": 4960.0
+        }
+      ]
+    },
+    "expected_issue_codes": [],
+    "expect_failure": false,
+    "notes": "date like 15 October 2026"
+  },
+  {
+    "file": "03_pdf_no_tax_no_due.pdf",
+    "kind": "pdf",
+    "expected": {
+      "invoice_number": "A-7781",
+      "invoice_date": "2026-05-10",
+      "due_date": null,
+      "supplier_name": "Acme Industrial Co",
+      "customer_name": "Horizon Retail Pvt",
+      "currency": null,
+      "subtotal": 21370.0,
+      "tax": null,
+      "total": 21370.0,
+      "line_items": [
+        {
+          "description": "Monitor Stand",
+          "quantity": 6.0,
+          "unit_price": 980.0,
+          "amount": 5880.0
+        },
+        {
+          "description": "Stapler Set",
+          "quantity": 2.0,
+          "unit_price": 320.0,
+          "amount": 640.0
+        },
+        {
+          "description": "Desk Lamp",
+          "quantity": 9.0,
+          "unit_price": 450.0,
+          "amount": 4050.0
+        },
+        {
+          "description": "USB Keyboard",
+          "quantity": 9.0,
+          "unit_price": 1200.0,
+          "amount": 10800.0
+        }
+      ]
+    },
+    "expected_issue_codes": [],
+    "expect_failure": false,
+    "notes": "tax, due date and currency are NOT printed: the correct answer is null"
+  },
+  {
+    "file": "04_pdf_leading_zeros.pdf",
+    "kind": "pdf",
+    "expected": {
+      "invoice_number": "00427",
+      "invoice_date": "2026-09-16",
+      "due_date": "2026-09-30",
+      "supplier_name": "Pioneer Tech Services",
+      "customer_name": "Sakura Imports",
+      "currency": "USD",
+      "subtotal": 60140.0,
+      "tax": 6014.0,
+      "total": 66154.0,
+      "line_items": [
+        {
+          "description": "Office Chair",
+          "quantity": 7.0,
+          "unit_price": 2500.0,
+          "amount": 17500.0
+        },
+        {
+          "description": "USB Keyboard",
+          "quantity": 2.0,
+          "unit_price": 1200.0,
+          "amount": 2400.0
+        },
+        {
+          "description": "Stapler Set",
+          "quantity": 7.0,
+          "unit_price": 320.0,
+          "amount": 2240.0
+        },
+        {
+          "description": "Printer Toner",
+          "quantity": 10.0,
+          "unit_price": 3800.0,
+          "amount": 38000.0
+        }
+      ]
+    },
+    "expected_issue_codes": [],
+    "expect_failure": false,
+    "notes": "invoice number with leading zeros"
+  },
+  {
+    "file": "05_pdf_tax15.pdf",
+    "kind": "pdf",
+    "expected": {
+      "invoice_number": "INV-1005",
+      "invoice_date": "2026-10-08",
+      "due_date": "2026-10-22",
+      "supplier_name": "Greenleaf Foods",
+      "customer_name": "Greenfield Traders",
+      "currency": "GBP",
+      "subtotal": 34250.0,
+      "tax": 5137.5,
+      "total": 39387.5,
+      "line_items": [
+        {
+          "description": "Monitor Stand",
+          "quantity": 10.0,
+          "unit_price": 980.0,
+          "amount": 9800.0
+        },
+        {
+          "description": "Stapler Set",
+          "quantity": 8.0,
+          "unit_price": 320.0,
+          "amount": 2560.0
+        },
+        {
+          "description": "Whiteboard",
+          "quantity": 9.0,
+          "unit_price": 1750.0,
+          "amount": 15750.0
+        },
+        {
+          "description": "Network Cable 10m",
+          "quantity": 9.0,
+          "unit_price": 260.0,
+          "amount": 2340.0
+        },
+        {
+          "description": "Printer Toner",
+          "quantity": 1.0,
+          "unit_price": 3800.0,
+          "amount": 3800.0
+        }
+      ]
+    },
+    "expected_issue_codes": [],
+    "expect_failure": false,
+    "notes": ""
+  },
+  {
+    "file": "06_pdf_many_items.pdf",
+    "kind": "pdf",
+    "expected": {
+      "invoice_number": "INV-1006",
+      "invoice_date": "2026-09-13",
+      "due_date": "2026-10-28",
+      "supplier_name": "Pioneer Tech Services",
+      "customer_name": "Riverside Hotel",
+      "currency": "USD",
+      "subtotal": 160740.0,
+      "tax": 8037.0,
+      "total": 168777.0,
+      "line_items": [
+        {
+          "description": "Stapler Set",
+          "quantity": 11.0,
+          "unit_price": 320.0,
+          "amount": 3520.0
+        },
+        {
+          "description": "Desk Lamp",
+          "quantity": 12.0,
+          "unit_price": 450.0,
+          "amount": 5400.0
+        },
+        {
+          "description": "Monitor Stand",
+          "quantity": 8.0,
+          "unit_price": 980.0,
+          "amount": 7840.0
+        },
+        {
+          "description": "Printer Toner",
+          "quantity": 11.0,
+          "unit_price": 3800.0,
+          "amount": 41800.0
+        },
+        {
+          "description": "Network Cable 10m",
+          "quantity": 8.0,
+          "unit_price": 260.0,
+          "amount": 2080.0
+        },
+        {
+          "description": "Filing Cabinet",
+          "quantity": 12.0,
+          "unit_price": 6400.0,
+          "amount": 76800.0
+        },
+        {
+          "description": "USB Keyboard",
+          "quantity": 9.0,
+          "unit_price": 1200.0,
+          "amount": 10800.0
+        },
+        {
+          "description": "Office Chair",
+          "quantity": 5.0,
+          "unit_price": 2500.0,
+          "amount": 12500.0
+        }
+      ]
+    },
+    "expected_issue_codes": [],
+    "expect_failure": false,
+    "notes": "8 line items"
+  },
+  {
+    "file": "07_scan_light.png",
+    "kind": "scan",
+    "expected": {
+      "invoice_number": "INV-1007",
+      "invoice_date": "2026-08-26",
+      "due_date": "2026-10-10",
+      "supplier_name": "Greenleaf Foods",
+      "customer_name": "Bright Future School",
+      "currency": "GBP",
+      "subtotal": 22660.0,
+      "tax": 1133.0,
+      "total": 23793.0,
+      "line_items": [
+        {
+          "description": "Monitor Stand",
+          "quantity": 1.0,
+          "unit_price": 980.0,
+          "amount": 980.0
+        },
+        {
+          "description": "Network Cable 10m",
+          "quantity": 1.0,
+          "unit_price": 260.0,
+          "amount": 260.0
+        },
+        {
+          "description": "Printer Toner",
+          "quantity": 3.0,
+          "unit_price": 3800.0,
+          "amount": 11400.0
+        },
+        {
+          "description": "A4 Paper Ream",
+          "quantity": 11.0,
+          "unit_price": 620.0,
+          "amount": 6820.0
+        },
+        {
+          "description": "Stapler Set",
+          "quantity": 10.0,
+          "unit_price": 320.0,
+          "amount": 3200.0
+        }
+      ]
+    },
+    "expected_issue_codes": [],
+    "expect_failure": false,
+    "notes": "light scan"
+  },
+  {
+    "file": "08_scan_medium.png",
+    "kind": "scan",
+    "expected": {
+      "invoice_number": "INV-1008",
+      "invoice_date": "2026-09-22",
+      "due_date": "2026-10-06",
+      "supplier_name": "Acme Industrial Co",
+      "customer_name": "Riverside Hotel",
+      "currency": "USD",
+      "subtotal": 69190.0,
+      "tax": 6919.0,
+      "total": 76109.0,
+      "line_items": [
+        {
+          "description": "Whiteboard",
+          "quantity": 9.0,
+          "unit_price": 1750.0,
+          "amount": 15750.0
+        },
+        {
+          "description": "Filing Cabinet",
+          "quantity": 8.0,
+          "unit_price": 6400.0,
+          "amount": 51200.0
+        },
+        {
+          "description": "Stapler Set",
+          "quantity": 7.0,
+          "unit_price": 320.0,
+          "amount": 2240.0
+        }
+      ]
+    },
+    "expected_issue_codes": [],
+    "expect_failure": false,
+    "notes": "medium scan"
+  },
+  {
+    "file": "09_scan_heavy.png",
+    "kind": "scan",
+    "expected": {
+      "invoice_number": "INV-1009",
+      "invoice_date": "2026-05-16",
+      "due_date": "2026-06-15",
+      "supplier_name": "Acme Industrial Co",
+      "customer_name": "Delta Office Solutions",
+      "currency": "USD",
+      "subtotal": 104410.0,
+      "tax": 5220.5,
+      "total": 109630.5,
+      "line_items": [
+        {
+          "description": "Desk Lamp",
+          "quantity": 7.0,
+          "unit_price": 450.0,
+          "amount": 3150.0
+        },
+        {
+          "description": "Filing Cabinet",
+          "quantity": 12.0,
+          "unit_price": 6400.0,
+          "amount": 76800.0
+        },
+        {
+          "description": "Whiteboard",
+          "quantity": 8.0,
+          "unit_price": 1750.0,
+          "amount": 14000.0
+        },
+        {
+          "description": "Printer Toner",
+          "quantity": 2.0,
+          "unit_price": 3800.0,
+          "amount": 7600.0
+        },
+        {
+          "description": "Network Cable 10m",
+          "quantity": 11.0,
+          "unit_price": 260.0,
+          "amount": 2860.0
+        }
+      ]
+    },
+    "expected_issue_codes": [],
+    "expect_failure": false,
+    "notes": "poor scan"
+  },
+  {
+    "file": "10_sheet.csv",
+    "kind": "csv",
+    "expected": {
+      "invoice_number": "INV-1010",
+      "invoice_date": "2026-04-08",
+      "due_date": "2026-04-22",
+      "supplier_name": "Northwind Supplies",
+      "customer_name": "Greenfield Traders",
+      "currency": "EUR",
+      "subtotal": 101900.0,
+      "tax": 5095.0,
+      "total": 106995.0,
+      "line_items": [
+        {
+          "description": "A4 Paper Ream",
+          "quantity": 8.0,
+          "unit_price": 620.0,
+          "amount": 4960.0
+        },
+        {
+          "description": "Filing Cabinet",
+          "quantity": 10.0,
+          "unit_price": 6400.0,
+          "amount": 64000.0
+        },
+        {
+          "description": "Office Chair",
+          "quantity": 9.0,
+          "unit_price": 2500.0,
+          "amount": 22500.0
+        },
+        {
+          "description": "Stapler Set",
+          "quantity": 2.0,
+          "unit_price": 320.0,
+          "amount": 640.0
+        },
+        {
+          "description": "Monitor Stand",
+          "quantity": 10.0,
+          "unit_price": 980.0,
+          "amount": 9800.0
+        }
+      ]
+    },
+    "expected_issue_codes": [],
+    "expect_failure": false,
+    "notes": ""
+  },
+  {
+    "file": "11_sheet_no_tax.csv",
+    "kind": "csv",
+    "expected": {
+      "invoice_number": "INV-1011",
+      "invoice_date": "2026-03-18",
+      "due_date": "2026-04-01",
+      "supplier_name": "Greenleaf Foods",
+      "customer_name": "Bright Future School",
+      "currency": null,
+      "subtotal": 46960.0,
+      "tax": null,
+      "total": 46960.0,
+      "line_items": [
+        {
+          "description": "USB Keyboard",
+          "quantity": 11.0,
+          "unit_price": 1200.0,
+          "amount": 13200.0
+        },
+        {
+          "description": "A4 Paper Ream",
+          "quantity": 10.0,
+          "unit_price": 620.0,
+          "amount": 6200.0
+        },
+        {
+          "description": "Office Chair",
+          "quantity": 10.0,
+          "unit_price": 2500.0,
+          "amount": 25000.0
+        },
+        {
+          "description": "Stapler Set",
+          "quantity": 8.0,
+          "unit_price": 320.0,
+          "amount": 2560.0
+        }
+      ]
+    },
+    "expected_issue_codes": [],
+    "expect_failure": false,
+    "notes": ""
+  },
+  {
+    "file": "12_sheet.xlsx",
+    "kind": "xlsx",
+    "expected": {
+      "invoice_number": "INV-1012",
+      "invoice_date": "2026-03-05",
+      "due_date": "2026-04-19",
+      "supplier_name": "Greenleaf Foods",
+      "customer_name": "Riverside Hotel",
+      "currency": "GBP",
+      "subtotal": 22010.0,
+      "tax": 2201.0,
+      "total": 24211.0,
+      "line_items": [
+        {
+          "description": "Network Cable 10m",
+          "quantity": 2.0,
+          "unit_price": 260.0,
+          "amount": 520.0
+        },
+        {
+          "description": "Stapler Set",
+          "quantity": 7.0,
+          "unit_price": 320.0,
+          "amount": 2240.0
+        },
+        {
+          "description": "Whiteboard",
+          "quantity": 11.0,
+          "unit_price": 1750.0,
+          "amount": 19250.0
+        }
+      ]
+    },
+    "expected_issue_codes": [],
+    "expect_failure": false,
+    "notes": ""
+  },
+  {
+    "file": "13_sheet_tax.xlsx",
+    "kind": "xlsx",
+    "expected": {
+      "invoice_number": "INV-1013",
+      "invoice_date": "2026-06-25",
+      "due_date": null,
+      "supplier_name": "Greenleaf Foods",
+      "customer_name": "Greenfield Traders",
+      "currency": "GBP",
+      "subtotal": 35300.0,
+      "tax": 5295.0,
+      "total": 40595.0,
+      "line_items": [
+        {
+          "description": "Monitor Stand",
+          "quantity": 2.0,
+          "unit_price": 980.0,
+          "amount": 1960.0
+        },
+        {
+          "description": "A4 Paper Ream",
+          "quantity": 7.0,
+          "unit_price": 620.0,
+          "amount": 4340.0
+        },
+        {
+          "description": "Printer Toner",
+          "quantity": 2.0,
+          "unit_price": 3800.0,
+          "amount": 7600.0
+        },
+        {
+          "description": "Filing Cabinet",
+          "quantity": 1.0,
+          "unit_price": 6400.0,
+          "amount": 6400.0
+        },
+        {
+          "description": "Office Chair",
+          "quantity": 6.0,
+          "unit_price": 2500.0,
+          "amount": 15000.0
+        }
+      ]
+    },
+    "expected_issue_codes": [],
+    "expect_failure": false,
+    "notes": ""
+  },
+  {
+    "file": "14_pdf_leading_zeros_2.pdf",
+    "kind": "pdf",
+    "expected": {
+      "invoice_number": "000831",
+      "invoice_date": "2026-03-19",
+      "due_date": "2026-05-03",
+      "supplier_name": "Greenleaf Foods",
+      "customer_name": "Maple Leaf Clinic",
+      "currency": "GBP",
+      "subtotal": 101300.0,
+      "tax": 5065.0,
+      "total": 106365.0,
+      "line_items": [
+        {
+          "description": "USB Keyboard",
+          "quantity": 8.0,
+          "unit_price": 1200.0,
+          "amount": 9600.0
+        },
+        {
+          "description": "Whiteboard",
+          "quantity": 8.0,
+          "unit_price": 1750.0,
+          "amount": 14000.0
+        },
+        {
+          "description": "Filing Cabinet",
+          "quantity": 10.0,
+          "unit_price": 6400.0,
+          "amount": 64000.0
+        },
+        {
+          "description": "A4 Paper Ream",
+          "quantity": 10.0,
+          "unit_price": 620.0,
+          "amount": 6200.0
+        },
+        {
+          "description": "Office Chair",
+          "quantity": 3.0,
+          "unit_price": 2500.0,
+          "amount": 7500.0
+        }
+      ]
+    },
+    "expected_issue_codes": [],
+    "expect_failure": false,
+    "notes": "invoice number with leading zeros"
+  },
+  {
+    "file": "15_flaw_wrong_total.pdf",
+    "kind": "pdf",
+    "expected": {
+      "invoice_number": "INV-1015",
+      "invoice_date": "2026-03-02",
+      "due_date": "2026-04-16",
+      "supplier_name": "Blue River Stationers",
+      "customer_name": "Greenfield Traders",
+      "currency": "BDT",
+      "subtotal": 69650.0,
+      "tax": 3482.5,
+      "total": 73632.5,
+      "line_items": [
+        {
+          "description": "Filing Cabinet",
+          "quantity": 7.0,
+          "unit_price": 6400.0,
+          "amount": 44800.0
+        },
+        {
+          "description": "Printer Toner",
+          "quantity": 1.0,
+          "unit_price": 3800.0,
+          "amount": 3800.0
+        },
+        {
+          "description": "Desk Lamp",
+          "quantity": 4.0,
+          "unit_price": 450.0,
+          "amount": 1800.0
+        },
+        {
+          "description": "Whiteboard",
+          "quantity": 11.0,
+          "unit_price": 1750.0,
+          "amount": 19250.0
+        }
+      ]
+    },
+    "expected_issue_codes": [
+      "total_mismatch"
+    ],
+    "expect_failure": false,
+    "notes": "printed total is 500 too high"
+  },
+  {
+    "file": "16_flaw_wrong_line.pdf",
+    "kind": "pdf",
+    "expected": {
+      "invoice_number": "INV-1016",
+      "invoice_date": "2026-09-05",
+      "due_date": "2026-09-19",
+      "supplier_name": "Blue River Stationers",
+      "customer_name": "Horizon Retail Pvt",
+      "currency": "BDT",
+      "subtotal": 95480.0,
+      "tax": 4774.0,
+      "total": 100254.0,
+      "line_items": [
+        {
+          "description": "Filing Cabinet",
+          "quantity": 11.0,
+          "unit_price": 6400.0,
+          "amount": 70500.0
+        },
+        {
+          "description": "Office Chair",
+          "quantity": 9.0,
+          "unit_price": 2500.0,
+          "amount": 22500.0
+        },
+        {
+          "description": "A4 Paper Ream",
+          "quantity": 4.0,
+          "unit_price": 620.0,
+          "amount": 2480.0
+        }
+      ]
+    },
+    "expected_issue_codes": [
+      "line_total_mismatch"
+    ],
+    "expect_failure": false,
+    "notes": "first line: qty x price differs from amount"
+  },
+  {
+    "file": "17_flaw_no_date.pdf",
+    "kind": "pdf",
+    "expected": {
+      "invoice_number": "INV-1017",
+      "invoice_date": null,
+      "due_date": "2026-07-06",
+      "supplier_name": "Blue River Stationers",
+      "customer_name": "Bright Future School",
+      "currency": "BDT",
+      "subtotal": 24700.0,
+      "tax": 1235.0,
+      "total": 25935.0,
+      "line_items": [
+        {
+          "description": "Monitor Stand",
+          "quantity": 2.0,
+          "unit_price": 980.0,
+          "amount": 1960.0
+        },
+        {
+          "description": "Stapler Set",
+          "quantity": 7.0,
+          "unit_price": 320.0,
+          "amount": 2240.0
+        },
+        {
+          "description": "Network Cable 10m",
+          "quantity": 5.0,
+          "unit_price": 260.0,
+          "amount": 1300.0
+        },
+        {
+          "description": "Filing Cabinet",
+          "quantity": 3.0,
+          "unit_price": 6400.0,
+          "amount": 19200.0
+        }
+      ]
+    },
+    "expected_issue_codes": [
+      "missing_field"
+    ],
+    "expect_failure": false,
+    "notes": "invoice date is not printed"
+  },
+  {
+    "file": "18_flaw_no_number.pdf",
+    "kind": "pdf",
+    "expected": {
+      "invoice_number": null,
+      "invoice_date": "2026-05-27",
+      "due_date": "2026-06-10",
+      "supplier_name": "Blue River Stationers",
+      "customer_name": "Maple Leaf Clinic",
+      "currency": "BDT",
+      "subtotal": 71660.0,
+      "tax": 3583.0,
+      "total": 75243.0,
+      "line_items": [
+        {
+          "description": "Whiteboard",
+          "quantity": 8.0,
+          "unit_price": 1750.0,
+          "amount": 14000.0
+        },
+        {
+          "description": "Filing Cabinet",
+          "quantity": 8.0,
+          "unit_price": 6400.0,
+          "amount": 51200.0
+        },
+        {
+          "description": "A4 Paper Ream",
+          "quantity": 2.0,
+          "unit_price": 620.0,
+          "amount": 1240.0
+        },
+        {
+          "description": "Stapler Set",
+          "quantity": 9.0,
+          "unit_price": 320.0,
+          "amount": 2880.0
+        },
+        {
+          "description": "Network Cable 10m",
+          "quantity": 9.0,
+          "unit_price": 260.0,
+          "amount": 2340.0
+        }
+      ]
+    },
+    "expected_issue_codes": [
+      "missing_field"
+    ],
+    "expect_failure": false,
+    "notes": "invoice number is not printed"
+  },
+  {
+    "file": "19_flaw_duplicate.pdf",
+    "kind": "pdf",
+    "expected": {
+      "invoice_number": "INV-1001",
+      "invoice_date": "2026-10-18",
+      "due_date": "2026-12-02",
+      "supplier_name": "Sunrise Trading Ltd",
+      "customer_name": "Bright Future School",
+      "currency": "BDT",
+      "subtotal": 54650.0,
+      "tax": 2732.5,
+      "total": 57382.5,
+      "line_items": [
+        {
+          "description": "Stapler Set",
+          "quantity": 10.0,
+          "unit_price": 320.0,
+          "amount": 3200.0
+        },
+        {
+          "description": "Network Cable 10m",
+          "quantity": 10.0,
+          "unit_price": 260.0,
+          "amount": 2600.0
+        },
+        {
+          "description": "Desk Lamp",
+          "quantity": 9.0,
+          "unit_price": 450.0,
+          "amount": 4050.0
+        },
+        {
+          "description": "Filing Cabinet",
+          "quantity": 7.0,
+          "unit_price": 6400.0,
+          "amount": 44800.0
+        }
+      ]
+    },
+    "expected_issue_codes": [
+      "duplicate_invoice"
+    ],
+    "expect_failure": false,
+    "notes": "same supplier + invoice number as file 01"
+  },
+  {
+    "file": "20_corrupt.pdf",
+    "kind": "corrupt",
+    "expected": null,
+    "expected_issue_codes": [],
+    "expect_failure": true,
+    "notes": "starts like a PDF but is garbage"
+  },
+  {
+    "file": "21_unsupported.txt",
+    "kind": "unsupported",
+    "expected": null,
+    "expected_issue_codes": [],
+    "expect_failure": true,
+    "notes": "unsupported file type"
+  }
+]

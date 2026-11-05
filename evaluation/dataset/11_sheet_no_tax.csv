@@ -1,0 +1,13 @@
+Invoice No,INV-1011
+Date,2026-03-18
+Due Date,2026-04-01
+Supplier,Greenleaf Foods
+Bill To,Bright Future School
+
+Description,Qty,Unit Price,Amount
+USB Keyboard,11,1200.00,13200.00
+A4 Paper Ream,10,620.00,6200.00
+Office Chair,10,2500.00,25000.00
+Stapler Set,8,320.00,2560.00
+Subtotal,,,46960.00
+Total,,,46960.00
