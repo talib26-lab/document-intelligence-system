@@ -38,6 +38,34 @@ NUMERIC = {"subtotal", "tax", "total"}
 DATES = {"invoice_date", "due_date"}
 SLEEP_BETWEEN_AI_CALLS = 5  # seconds, to stay inside free-tier rate limits
 
+# ---------------------------------------------------------------- AI answer cache
+import hashlib  # noqa: E402
+
+from backend.app.extraction.invoice_extractor import MODEL_NAME, extract_invoice  # noqa: E402
+from backend.app.extraction.schemas import InvoiceData  # noqa: E402
+
+CACHE_PATH = RESULTS / "ai_cache.json"
+STATS = {"live": 0, "cached": 0}
+
+
+def cached_extract(text: str):
+    """Ask Gemini only if we have never seen this exact document text with this model.
+
+    Only SUCCESSFUL answers are stored (errors propagate), so a rate-limit failure
+    can never end up in the cache.
+    """
+    key = hashlib.sha256((MODEL_NAME + "\n" + text).encode("utf-8")).hexdigest()
+    cache = json.loads(CACHE_PATH.read_text(encoding="utf-8")) if CACHE_PATH.exists() else {}
+    if key in cache:
+        STATS["cached"] += 1
+        return InvoiceData.model_validate(cache[key])
+    STATS["live"] += 1
+    invoice = extract_invoice(text)
+    cache[key] = invoice.model_dump()
+    RESULTS.mkdir(exist_ok=True)
+    CACHE_PATH.write_text(json.dumps(cache, indent=2, ensure_ascii=False), encoding="utf-8")
+    return invoice
+
 
 # ---------------------------------------------------------------- comparison
 def is_empty(v) -> bool:
@@ -101,7 +129,7 @@ def evaluate_one(entry: dict) -> dict:
     start = time.perf_counter()
     crashed = None
     try:
-        run_job(doc_id)
+        run_job(doc_id, extractor=cached_extract)
     except Exception as error:  # run_job promises never to raise; record it if it does
         crashed = repr(error)
     elapsed = time.perf_counter() - start
@@ -225,11 +253,12 @@ def main() -> None:
 
     results = []
     for n, entry in enumerate(entries, 1):
+        before = STATS["live"]
         r = evaluate_one(entry)
         results.append(r)
         print(f"[{n}/{len(entries)}] {entry['file']:<28} status={r['status']:<13} {r['seconds']:>5}s "
               f"issues={','.join(r['issue_codes']) or '-'}")
-        if not entry["expect_failure"] and n < len(entries):
+        if STATS["live"] > before and n < len(entries):
             time.sleep(SLEEP_BETWEEN_AI_CALLS)
 
     RESULTS.mkdir(exist_ok=True)
