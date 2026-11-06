@@ -17,7 +17,7 @@ Upload invoices as **PDF, JPG, PNG, TIFF, XLSX, XLS or CSV**. The system reads t
 ## Architecture
 
 ```mermaid
-flowchart LR
+flowchart TD
     U[User / Browser<br/>Next.js UI] -->|upload, poll, correct, search| API[FastAPI REST API]
     API -->|202 Accepted + background task| JOB[Job runner]
     API <--> DB[(SQLite<br/>WAL mode)]
