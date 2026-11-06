@@ -5,7 +5,7 @@
     "status": "completed",
     "error_message": null,
     "crashed": null,
-    "seconds": 4.95,
+    "seconds": 0.04,
     "ocr_confidence": null,
     "issue_codes": [],
     "predicted": {
@@ -109,7 +109,7 @@
     "status": "completed",
     "error_message": null,
     "crashed": null,
-    "seconds": 5.55,
+    "seconds": 0.04,
     "ocr_confidence": null,
     "issue_codes": [],
     "predicted": {
@@ -225,7 +225,7 @@
     "status": "completed",
     "error_message": null,
     "crashed": null,
-    "seconds": 4.52,
+    "seconds": 0.04,
     "ocr_confidence": null,
     "issue_codes": [],
     "predicted": {
@@ -329,7 +329,7 @@
     "status": "completed",
     "error_message": null,
     "crashed": null,
-    "seconds": 4.39,
+    "seconds": 0.04,
     "ocr_confidence": null,
     "issue_codes": [],
     "predicted": {
@@ -433,7 +433,7 @@
     "status": "completed",
     "error_message": null,
     "crashed": null,
-    "seconds": 5.96,
+    "seconds": 0.04,
     "ocr_confidence": null,
     "issue_codes": [],
     "predicted": {
@@ -549,7 +549,7 @@
     "status": "completed",
     "error_message": null,
     "crashed": null,
-    "seconds": 5.73,
+    "seconds": 0.03,
     "ocr_confidence": null,
     "issue_codes": [],
     "predicted": {
@@ -701,7 +701,7 @@
     "status": "completed",
     "error_message": null,
     "crashed": null,
-    "seconds": 6.31,
+    "seconds": 1.2,
     "ocr_confidence": 95.6,
     "issue_codes": [],
     "predicted": {
@@ -817,7 +817,7 @@
     "status": "needs_review",
     "error_message": null,
     "crashed": null,
-    "seconds": 5.14,
+    "seconds": 0.89,
     "ocr_confidence": 92.8,
     "issue_codes": [
       "uncertain_field"
@@ -915,7 +915,7 @@
     "status": "needs_review",
     "error_message": null,
     "crashed": null,
-    "seconds": 14.79,
+    "seconds": 1.06,
     "ocr_confidence": 44.6,
     "issue_codes": [
       "low_ocr_confidence",
@@ -1036,7 +1036,7 @@
     "status": "completed",
     "error_message": null,
     "crashed": null,
-    "seconds": 4.62,
+    "seconds": 0.04,
     "ocr_confidence": null,
     "issue_codes": [],
     "predicted": {
@@ -1152,7 +1152,7 @@
     "status": "completed",
     "error_message": null,
     "crashed": null,
-    "seconds": 4.05,
+    "seconds": 0.03,
     "ocr_confidence": null,
     "issue_codes": [],
     "predicted": {
@@ -1256,7 +1256,7 @@
     "status": "completed",
     "error_message": null,
     "crashed": null,
-    "seconds": 4.6,
+    "seconds": 0.22,
     "ocr_confidence": null,
     "issue_codes": [],
     "predicted": {
@@ -1348,7 +1348,7 @@
     "status": "completed",
     "error_message": null,
     "crashed": null,
-    "seconds": 3.81,
+    "seconds": 0.04,
     "ocr_confidence": null,
     "issue_codes": [],
     "predicted": {
@@ -1464,7 +1464,7 @@
     "status": "completed",
     "error_message": null,
     "crashed": null,
-    "seconds": 4.73,
+    "seconds": 0.03,
     "ocr_confidence": null,
     "issue_codes": [],
     "predicted": {
@@ -1580,7 +1580,7 @@
     "status": "needs_review",
     "error_message": null,
     "crashed": null,
-    "seconds": 4.39,
+    "seconds": 0.03,
     "ocr_confidence": null,
     "issue_codes": [
       "total_mismatch"
@@ -1688,7 +1688,7 @@
     "status": "needs_review",
     "error_message": null,
     "crashed": null,
-    "seconds": 4.57,
+    "seconds": 0.04,
     "ocr_confidence": null,
     "issue_codes": [
       "line_total_mismatch"
@@ -1784,7 +1784,7 @@
     "status": "needs_review",
     "error_message": null,
     "crashed": null,
-    "seconds": 4.14,
+    "seconds": 0.03,
     "ocr_confidence": null,
     "issue_codes": [
       "missing_field"
@@ -1892,7 +1892,7 @@
     "status": "needs_review",
     "error_message": null,
     "crashed": null,
-    "seconds": 11.54,
+    "seconds": 0.03,
     "ocr_confidence": null,
     "issue_codes": [
       "missing_field"
@@ -2012,7 +2012,7 @@
     "status": "needs_review",
     "error_message": null,
     "crashed": null,
-    "seconds": 4.42,
+    "seconds": 0.03,
     "ocr_confidence": null,
     "issue_codes": [
       "duplicate_invoice"
@@ -2120,7 +2120,7 @@
     "status": "failed",
     "error_message": "Cannot open PDF: Failed to open file 'F:\\\\projects\\\\document-intelligence-system\\\\evaluation\\\\dataset\\\\20_corrupt.pdf' as type pdf.",
     "crashed": null,
-    "seconds": 0.05,
+    "seconds": 0.01,
     "ocr_confidence": null,
     "issue_codes": [],
     "predicted": {},

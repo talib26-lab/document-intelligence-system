@@ -63,4 +63,4 @@ Per injected error:
 
 ## Speed (includes the Gemini call)
 
-Mean 5.7s, median 4.6s, max 14.8s per document (19 documents).
+Mean 0.2s, median 0.0s, max 1.2s per document (19 documents).
