@@ -5,7 +5,7 @@
     "status": "completed",
     "error_message": null,
     "crashed": null,
-    "seconds": 4.78,
+    "seconds": 4.95,
     "ocr_confidence": null,
     "issue_codes": [],
     "predicted": {
@@ -109,7 +109,7 @@
     "status": "completed",
     "error_message": null,
     "crashed": null,
-    "seconds": 4.81,
+    "seconds": 5.55,
     "ocr_confidence": null,
     "issue_codes": [],
     "predicted": {
@@ -225,7 +225,7 @@
     "status": "completed",
     "error_message": null,
     "crashed": null,
-    "seconds": 4.26,
+    "seconds": 4.52,
     "ocr_confidence": null,
     "issue_codes": [],
     "predicted": {
@@ -329,7 +329,7 @@
     "status": "completed",
     "error_message": null,
     "crashed": null,
-    "seconds": 4.42,
+    "seconds": 4.39,
     "ocr_confidence": null,
     "issue_codes": [],
     "predicted": {
@@ -433,7 +433,7 @@
     "status": "completed",
     "error_message": null,
     "crashed": null,
-    "seconds": 5.41,
+    "seconds": 5.96,
     "ocr_confidence": null,
     "issue_codes": [],
     "predicted": {
@@ -549,7 +549,7 @@
     "status": "completed",
     "error_message": null,
     "crashed": null,
-    "seconds": 5.62,
+    "seconds": 5.73,
     "ocr_confidence": null,
     "issue_codes": [],
     "predicted": {
@@ -701,7 +701,7 @@
     "status": "completed",
     "error_message": null,
     "crashed": null,
-    "seconds": 10.56,
+    "seconds": 6.31,
     "ocr_confidence": 95.6,
     "issue_codes": [],
     "predicted": {
@@ -817,7 +817,7 @@
     "status": "needs_review",
     "error_message": null,
     "crashed": null,
-    "seconds": 4.83,
+    "seconds": 5.14,
     "ocr_confidence": 92.8,
     "issue_codes": [
       "uncertain_field"
@@ -915,10 +915,9 @@
     "status": "needs_review",
     "error_message": null,
     "crashed": null,
-    "seconds": 11.73,
+    "seconds": 14.79,
     "ocr_confidence": 44.6,
     "issue_codes": [
-      "line_total_mismatch",
       "low_ocr_confidence",
       "total_mismatch",
       "uncertain_field"
@@ -931,38 +930,41 @@
       "customer_name": "Dette Orion Sansone",
       "currency": "USD",
       "subtotal": 14410.0,
-      "tax": 5220.5,
+      "tax": 220.5,
       "total": 109630.5,
       "line_items": [
         {
-          "description": "Sess Lame ?",
-          "quantity": 6400.0,
-          "unit_price": 51.0,
+          "description": "Sess Lame",
+          "quantity": 51.0,
+          "unit_price": null,
           "amount": 76.0
         },
         {
           "description": "Fang Camsenet be 3",
           "quantity": 178.0,
-          "unit_price": 4000.0,
-          "amount": 3200.89
+          "unit_price": null,
+          "amount": 4000.0
         },
         {
-          "description": "Preaar Tarwr etwas Carts 100% uw",
+          "description": "Preaar Tarwr",
+          "quantity": null,
+          "unit_price": 3200.89,
+          "amount": null
+        },
+        {
+          "description": "etwas Carts 100% uw",
           "quantity": null,
           "unit_price": null,
           "amount": null
         }
       ],
       "uncertain_fields": [
-        "total",
+        "tax",
         "line_items[0].description",
-        "line_items[0].amount",
-        "line_items[1].description",
-        "line_items[1].amount",
-        "line_items[2].description",
-        "line_items[2].quantity",
-        "line_items[2].unit_price",
-        "line_items[2].amount"
+        "line_items[0].quantity",
+        "line_items[0].unit_price",
+        "line_items[2].amount",
+        "line_items[3].amount"
       ]
     },
     "expected": {
@@ -1018,13 +1020,13 @@
       "customer_name": "wrong",
       "currency": "correct",
       "subtotal": "wrong",
-      "tax": "correct",
+      "tax": "wrong",
       "total": "correct"
     },
     "lines": {
       "matched": 0,
       "expected": 5,
-      "predicted": 3
+      "predicted": 4
     },
     "fully_correct": false
   },
@@ -1034,7 +1036,7 @@
     "status": "completed",
     "error_message": null,
     "crashed": null,
-    "seconds": 4.71,
+    "seconds": 4.62,
     "ocr_confidence": null,
     "issue_codes": [],
     "predicted": {
@@ -1150,7 +1152,7 @@
     "status": "completed",
     "error_message": null,
     "crashed": null,
-    "seconds": 4.49,
+    "seconds": 4.05,
     "ocr_confidence": null,
     "issue_codes": [],
     "predicted": {
@@ -1254,7 +1256,7 @@
     "status": "completed",
     "error_message": null,
     "crashed": null,
-    "seconds": 3.83,
+    "seconds": 4.6,
     "ocr_confidence": null,
     "issue_codes": [],
     "predicted": {
@@ -1346,7 +1348,7 @@
     "status": "completed",
     "error_message": null,
     "crashed": null,
-    "seconds": 5.29,
+    "seconds": 3.81,
     "ocr_confidence": null,
     "issue_codes": [],
     "predicted": {
@@ -1462,7 +1464,7 @@
     "status": "completed",
     "error_message": null,
     "crashed": null,
-    "seconds": 4.46,
+    "seconds": 4.73,
     "ocr_confidence": null,
     "issue_codes": [],
     "predicted": {
@@ -1578,7 +1580,7 @@
     "status": "needs_review",
     "error_message": null,
     "crashed": null,
-    "seconds": 4.25,
+    "seconds": 4.39,
     "ocr_confidence": null,
     "issue_codes": [
       "total_mismatch"
@@ -1686,7 +1688,7 @@
     "status": "needs_review",
     "error_message": null,
     "crashed": null,
-    "seconds": 4.69,
+    "seconds": 4.57,
     "ocr_confidence": null,
     "issue_codes": [
       "line_total_mismatch"
@@ -1782,7 +1784,7 @@
     "status": "needs_review",
     "error_message": null,
     "crashed": null,
-    "seconds": 5.08,
+    "seconds": 4.14,
     "ocr_confidence": null,
     "issue_codes": [
       "missing_field"
@@ -1887,13 +1889,58 @@
   {
     "file": "18_flaw_no_number.pdf",
     "kind": "pdf",
-    "status": "failed",
-    "error_message": "Extraction failed after 3 attempts: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api/docs/rate-limits.\\nPlease retry in 19h27m39.209677708s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'description': 'Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api/docs/rate-limits.', 'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '70059s'}]}}",
+    "status": "needs_review",
+    "error_message": null,
     "crashed": null,
-    "seconds": 7.52,
+    "seconds": 11.54,
     "ocr_confidence": null,
-    "issue_codes": [],
-    "predicted": {},
+    "issue_codes": [
+      "missing_field"
+    ],
+    "predicted": {
+      "invoice_number": null,
+      "invoice_date": "2026-05-27",
+      "due_date": "2026-06-10",
+      "supplier_name": "BLUE RIVER STATIONERS",
+      "customer_name": "Maple Leaf Clinic",
+      "currency": "BDT",
+      "subtotal": 71660.0,
+      "tax": 3583.0,
+      "total": 75243.0,
+      "line_items": [
+        {
+          "description": "Whiteboard",
+          "quantity": 8.0,
+          "unit_price": 1750.0,
+          "amount": 14000.0
+        },
+        {
+          "description": "Filing Cabinet",
+          "quantity": 8.0,
+          "unit_price": 6400.0,
+          "amount": 51200.0
+        },
+        {
+          "description": "A4 Paper Ream",
+          "quantity": 2.0,
+          "unit_price": 620.0,
+          "amount": 1240.0
+        },
+        {
+          "description": "Stapler Set",
+          "quantity": 9.0,
+          "unit_price": 320.0,
+          "amount": 2880.0
+        },
+        {
+          "description": "Network Cable 10m",
+          "quantity": 9.0,
+          "unit_price": 260.0,
+          "amount": 2340.0
+        }
+      ],
+      "uncertain_fields": []
+    },
     "expected": {
       "invoice_number": null,
       "invoice_date": "2026-05-27",
@@ -1943,32 +1990,71 @@
     "expect_failure": false,
     "fields": {
       "invoice_number": "correct_null",
-      "invoice_date": "missed",
-      "due_date": "missed",
-      "supplier_name": "missed",
-      "customer_name": "missed",
-      "currency": "missed",
-      "subtotal": "missed",
-      "tax": "missed",
-      "total": "missed"
+      "invoice_date": "correct",
+      "due_date": "correct",
+      "supplier_name": "correct",
+      "customer_name": "correct",
+      "currency": "correct",
+      "subtotal": "correct",
+      "tax": "correct",
+      "total": "correct"
     },
     "lines": {
-      "matched": 0,
+      "matched": 5,
       "expected": 5,
-      "predicted": 0
+      "predicted": 5
     },
-    "fully_correct": false
+    "fully_correct": true
   },
   {
     "file": "19_flaw_duplicate.pdf",
     "kind": "pdf",
-    "status": "failed",
-    "error_message": "Extraction failed after 3 attempts: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api/docs/rate-limits.\\nPlease retry in 19h27m26.624729815s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'description': 'Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api/docs/rate-limits.', 'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '70046s'}]}}",
+    "status": "needs_review",
+    "error_message": null,
     "crashed": null,
-    "seconds": 7.57,
+    "seconds": 4.42,
     "ocr_confidence": null,
-    "issue_codes": [],
-    "predicted": {},
+    "issue_codes": [
+      "duplicate_invoice"
+    ],
+    "predicted": {
+      "invoice_number": "INV-1001",
+      "invoice_date": "2026-10-18",
+      "due_date": "2026-12-02",
+      "supplier_name": "SUNRISE TRADING LTD",
+      "customer_name": "Bright Future School",
+      "currency": "BDT",
+      "subtotal": 54650.0,
+      "tax": 2732.5,
+      "total": 57382.5,
+      "line_items": [
+        {
+          "description": "Stapler Set",
+          "quantity": 10.0,
+          "unit_price": 320.0,
+          "amount": 3200.0
+        },
+        {
+          "description": "Network Cable 10m",
+          "quantity": 10.0,
+          "unit_price": 260.0,
+          "amount": 2600.0
+        },
+        {
+          "description": "Desk Lamp",
+          "quantity": 9.0,
+          "unit_price": 450.0,
+          "amount": 4050.0
+        },
+        {
+          "description": "Filing Cabinet",
+          "quantity": 7.0,
+          "unit_price": 6400.0,
+          "amount": 44800.0
+        }
+      ],
+      "uncertain_fields": []
+    },
     "expected": {
       "invoice_number": "INV-1001",
       "invoice_date": "2026-10-18",
@@ -2011,22 +2097,22 @@
     ],
     "expect_failure": false,
     "fields": {
-      "invoice_number": "missed",
-      "invoice_date": "missed",
-      "due_date": "missed",
-      "supplier_name": "missed",
-      "customer_name": "missed",
-      "currency": "missed",
-      "subtotal": "missed",
-      "tax": "missed",
-      "total": "missed"
+      "invoice_number": "correct",
+      "invoice_date": "correct",
+      "due_date": "correct",
+      "supplier_name": "correct",
+      "customer_name": "correct",
+      "currency": "correct",
+      "subtotal": "correct",
+      "tax": "correct",
+      "total": "correct"
     },
     "lines": {
-      "matched": 0,
+      "matched": 4,
       "expected": 4,
-      "predicted": 0
+      "predicted": 4
     },
-    "fully_correct": false
+    "fully_correct": true
   },
   {
     "file": "20_corrupt.pdf",
@@ -2034,7 +2120,7 @@
     "status": "failed",
     "error_message": "Cannot open PDF: Failed to open file 'F:\\\\projects\\\\document-intelligence-system\\\\evaluation\\\\dataset\\\\20_corrupt.pdf' as type pdf.",
     "crashed": null,
-    "seconds": 0.07,
+    "seconds": 0.05,
     "ocr_confidence": null,
     "issue_codes": [],
     "predicted": {},
