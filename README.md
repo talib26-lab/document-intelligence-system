@@ -111,7 +111,7 @@ Open `http://localhost:3000`.
 python -m pytest -q
 ```
 
-33 automated tests (repository, job runner, REST API). They use a temporary database and a **fake extractor**, so they need no network and no API key.
+64 automated tests (repository, job runner, REST API, validator rules). They use a temporary database and a **fake extractor**, so they need no network and no API key.
 
 ## Evaluation (real, measured)
 
@@ -123,6 +123,8 @@ python evaluation/run_evaluation.py       # run the REAL pipeline + Gemini and m
 ```
 
 The runner reports field accuracy, hallucination rate (value invented where the truth is null), missed and wrong values, line-item precision/recall, detection of injected errors, false alarms on clean documents, failure handling, and speed. Successful AI answers are cached in `evaluation/results/ai_cache.json`, so results can be reproduced without an API key or quota. See `docs/evaluation_report.md`.
+
+**Measured result (final run, 19 labelled documents):** 97.1% field accuracy (166/171), **0% hallucination** (0/8 fields that should be null), 5/5 injected errors detected, 100% on PDF/CSV/XLSX, and 2/2 broken files failed safely. All 5 wrong values came from one heavily blurred scan, which the system itself flagged for human review. Small synthetic dataset; see the limitations in `docs/evaluation_report.md`.
 
 ## Security
 
