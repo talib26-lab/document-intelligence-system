@@ -4,12 +4,13 @@ import { useState } from "react";
 import DocumentDetail from "@/components/DocumentDetail";
 import DocumentList, { StatusBadge } from "@/components/DocumentList";
 import UploadPanel from "@/components/UploadPanel";
-import { searchDocuments, type DocumentSummary } from "@/lib/api";
+import { searchDocuments, semanticSearchDocuments, type DocumentSummary } from "@/lib/api";
 
 function SearchPanel({ onSelect }: { onSelect: (id: number) => void }) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<DocumentSummary[] | null>(null);
   const [searching, setSearching] = useState(false);
+    const [semantic, setSemantic] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   async function run() {
@@ -21,7 +22,7 @@ function SearchPanel({ onSelect }: { onSelect: (id: number) => void }) {
     }
     setSearching(true);
     try {
-      setResults(await searchDocuments(q));
+      setResults(await (semantic ? semanticSearchDocuments(q) : searchDocuments(q)));
     } catch (e) {
       setError(e instanceof Error ? e.message : "Search failed.");
     } finally {
@@ -54,6 +55,10 @@ function SearchPanel({ onSelect }: { onSelect: (id: number) => void }) {
           {searching ? "..." : "Search"}
         </button>
       </form>
+          <label className="mt-2 flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-300">
+      <input type="checkbox" checked={semantic} onChange={(e) => setSemantic(e.target.checked)} />
+      Meaning search (finds related documents, not just exact words)
+    </label>
 
       <div aria-live="polite" className="mt-3 text-sm">
         {error && <p className="rounded-md bg-red-50 p-3 text-red-700 dark:bg-red-950 dark:text-red-300">{error}</p>}
