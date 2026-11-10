@@ -7,6 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from backend.app.db.database import init_db
 from backend.app.api.documents import router as documents_router
+from backend.app.api.semantic_search import router as semantic_router
 
 
 @asynccontextmanager
@@ -36,3 +37,4 @@ def health() -> dict:
     return {"status": "ok"}
 
 app.include_router(documents_router)
+app.include_router(semantic_router)
