@@ -111,7 +111,7 @@ Open `http://localhost:3000`.
 python -m pytest -q
 ```
 
-64 automated tests (repository, job runner, REST API, validator rules). They use a temporary database and a **fake extractor**, so they need no network and no API key.
+76 automated tests (repository, job runner, REST API, validator rules). They use a temporary database and a **fake extractor**, so they need no network and no API key.
 
 ## Evaluation (real, measured)
 
@@ -149,7 +149,7 @@ Reliability already in place: retries on AI calls (3 attempts), jobs never raise
 
 ## Known limitations (honest list)
 
-- **Semantic search is not implemented yet.** Keyword search (SQL `LIKE`) is. Planned approach: Gemini embeddings stored in the database, cosine similarity at query time.
+- **Semantic search is implemented, but only lightly evaluated.** `GET /search/semantic` (the "Meaning search" checkbox in the UI) embeds each document with Gemini (`gemini-embedding-001`), stores the vectors in SQLite and ranks by cosine similarity. It is covered by tests with a fake embedder, but its quality has not been measured on the evaluation dataset. It compares against every stored vector, which is fine for thousands of documents, not millions (see the scalability path). Keyword search (SQL `LIKE`) remains available.
 - OCR is English only (Tesseract `eng`); heavily blurred scans lose accuracy (see evaluation).
 - Evaluation uses a **small synthetic** dataset (21 files); real-world invoices will be harder. Numbers show relative behaviour, not a production guarantee.
 - One document type (invoices) is supported in the schema.
