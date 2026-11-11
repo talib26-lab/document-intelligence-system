@@ -60,6 +60,7 @@ Missing required fields (`invoice_number`, `invoice_date`, `supplier_name`, `tot
 | `GET` | `/documents` | List documents (status filter, pagination) |
 | `GET` | `/documents/{id}` | Status, AI data, corrected data, issues, extracted text, event history |
 | `GET` | `/search` | Keyword search over file name, supplier, invoice number and extracted text |
+| `GET` | `/search/semantic` | Meaning-based search (Gemini embeddings + cosine similarity); returns document ids with scores |
 | `PATCH` | `/documents/{id}/correction` | Save a human correction; re-validates automatically |
 | `POST` | `/documents/{id}/reprocess` | Run the pipeline again (`409` if already running) |
 
